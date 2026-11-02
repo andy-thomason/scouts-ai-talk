@@ -1,0 +1,48 @@
+<section id="capitals" data-transition="fade" style="background:#1B1D3A;color:#FFF8EC;font-family:'Nunito Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:24px">
+<p style="font-size:24px;font-weight:800;letter-spacing:4px;text-transform:uppercase;color:#FF8A3D">Part 2 · Attention</p>
+<h2 style="font-family:'Fredoka', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1">“What is the capital of France?”</h2>
+<x-embed style="position:absolute;left:128px;top:310px;width:1664px;height:630px"><!doctype html><html><head><meta charset="utf-8"><style>
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:transparent}
+svg{width:100%;height:100%;font-family:ui-rounded,"Avenir Next","Segoe UI",Arial,sans-serif}
+text{font-size:36px;font-weight:700;fill:#8F92BF;text-anchor:middle;dominant-baseline:central;transition:fill .5s,transform .5s,opacity .5s;transform-box:fill-box;transform-origin:center}
+text.c{fill:#FFF8EC}
+text.k{fill:#3DA5FF}
+text.q{fill:#FF8A3D;transform:scale(1.35)}
+#cap{font-size:42px;fill:#FFF8EC}
+.ar line{stroke:#FF8A3D;stroke-width:6;stroke-linecap:round;transition:stroke-dashoffset .9s ease}
+.ar polygon{fill:#FF8A3D;opacity:0;transition:opacity .3s .7s}
+.ar.on polygon{opacity:1}
+</style></head><body>
+<svg id="sv" viewBox="0 0 1664 630" preserveAspectRatio="xMidYMid meet"><text id="cap" x="832" y="40"></text></svg>
+<script>
+var NS='http://www.w3.org/2000/svg',sv=document.getElementById('sv'),cap=document.getElementById('cap');
+var DX=230,DY=-100;
+var P=[["Italy",170,420,"Rome"],["Spain",150,600,"Madrid"],["Japan",720,590,"Tokyo"],["Germany",1020,390,"Berlin"],["Egypt",1260,600,"Cairo"],["France",620,330,"Paris"]];
+var D=[["piano",130,200],["snow",380,170],["happy",640,150],["king",1060,160],["castle",1320,170],["banana",1540,240],["queen",1540,380],["football",1300,470],["tiger",560,470],["cloud",820,420],["rocket",470,620],["river",1010,610],["pizza",1550,620]];
+function tx(s,x,y){var t=document.createElementNS(NS,'text');t.setAttribute('x',x);t.setAttribute('y',y);t.textContent=s;sv.appendChild(t);return t}
+D.forEach(function(d){tx(d[0],d[1],d[2])});
+var C=[],K=[];P.forEach(function(p){C.push(tx(p[0],p[1],p[2]));K.push(tx(p[3],p[1]+DX,p[2]+DY))});
+var len=Math.sqrt(DX*DX+DY*DY),ux=DX/len,uy=DY/len,arrows=[];
+function arrow(i){var p=P[i],x1=p[1]+ux*70,y1=p[2]+uy*70,x2=p[1]+DX-ux*66,y2=p[2]+DY-uy*66,L=len-136;
+var g=document.createElementNS(NS,'g');g.setAttribute('class','ar');var l=document.createElementNS(NS,'line');
+l.setAttribute('x1',x1);l.setAttribute('y1',y1);l.setAttribute('x2',x2-ux*12);l.setAttribute('y2',y2-uy*12);l.style.strokeDasharray=L;l.style.strokeDashoffset=L;
+var h=document.createElementNS(NS,'polygon'),bx=x2-ux*24,by=y2-uy*24;h.setAttribute('points',x2+','+y2+' '+(bx-uy*14)+','+(by+ux*14)+' '+(bx+uy*14)+','+(by-ux*14));
+g.appendChild(l);g.appendChild(h);sv.insertBefore(g,sv.firstChild);arrows.push(g);
+setTimeout(function(){l.style.strokeDashoffset=0;g.classList.add('on')},40)}
+function T(f,ms){setTimeout(f,ms)}
+function say(t){cap.style.opacity=0;T(function(){cap.textContent=t;cap.style.opacity=1},450)}
+function run(){arrows.forEach(function(g){sv.removeChild(g)});arrows=[];
+C.concat(K).forEach(function(t){t.setAttribute('class','')});
+say('A big jumble of words…');
+T(function(){say('Every capital is the same step away from its country')},1900);
+for(var i=0;5>i;i++)T((function(i){return function(){C[i].setAttribute('class','c');K[i].setAttribute('class','k');arrow(i)}})(i),3000+i*1100);
+var t=3000+5*1100+700;
+T(function(){say('That step means “capital of”')},t);
+T(function(){say('So… what is the capital of France?');C[5].setAttribute('class','q')},t+2600);
+T(function(){arrow(5)},t+4200);
+T(function(){K[5].setAttribute('class','q');say('Paris! Attention knew which way to step.')},t+5300);
+T(run,t+10500)}
+run();
+</script></body></html></x-embed>
+<aside>Here’s a jumble of words, each in its home spot. Look carefully: every capital city is the same step away from its country — a bit up and to the right. That step means “capital of”. When you ask “What is the capital of France?”, the chatbot pays attention to the important words, “capital” and “France”. It finds France, takes the “capital of” step, and lands on… Paris! Game: Attention scouts line up the country cards along one wall. Capital-city scouts stand exactly three big steps forward and two steps right of their country. Now ask “What is the capital of Germany?” The Attention scout must find Germany, take the same steps, and tap the person they land on.</aside>
+</section>

@@ -1,0 +1,41 @@
+<section id="next-word" data-transition="fade" style="background:#FFF8EC;color:#1B1D3A;font-family:'Nunito Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:24px">
+<p style="font-size:24px;font-weight:800;letter-spacing:4px;text-transform:uppercase;color:#B5480C">Part 1 · Guessing</p>
+<h2 style="font-family:'Fredoka', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1">A chatbot just guesses the next word</h2>
+<x-embed style="position:absolute;left:128px;top:320px;width:1664px;height:580px"><!doctype html><html><head><meta charset="utf-8"><style>
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:transparent}
+#st{position:absolute;left:0;top:0;width:1664px;height:580px;transform-origin:0 0;font-family:ui-rounded,"Avenir Next","Segoe UI",Arial,sans-serif;color:#1B1D3A}
+#s{font-size:72px;font-weight:700;height:110px;display:flex;align-items:flex-end;gap:24px;white-space:nowrap}
+.blank{display:inline-block;min-width:220px;height:90px;border-bottom:10px solid #FF8A3D;color:#D9620F;transition:border-color .4s}
+.blank.f{border-color:transparent}
+#b{margin-top:44px}
+.row{display:flex;align-items:center;gap:28px;height:68px;margin-bottom:12px;font-size:44px;opacity:0;transform:translateX(-40px);transition:opacity .5s,transform .5s}
+.row.on{opacity:1;transform:none}
+.w{width:280px;text-align:right;font-weight:700;transition:color .4s}
+.bar{height:52px;border-radius:14px;background:#3DA5FF;width:0;transition:width 1s cubic-bezier(.2,.8,.2,1),background .4s}
+.p{font-size:36px;color:#4A4E6E}
+.row.win .bar{background:#FF8A3D}
+.row.win .w{color:#D9620F}
+</style></head><body><div id="st"><div id="s"></div><div id="b"></div></div>
+<script>
+var st=document.getElementById('st'),S=document.getElementById('s'),B=document.getElementById('b'),k=0;
+function fit(){var z=Math.min(innerWidth/1664,innerHeight/580);st.style.transform='scale('+z+')'}fit();onresize=fit;
+var R=[["The cat sat on the",[["mat",62],["sofa",15],["floor",10],["roof",8],["banana",1]]],
+["Once upon a",[["time",91],["hill",4],["star",3],["sandwich",1]]],
+["After school I’m going",[["home",48],["to",30],["out",14],["swimming",6]]]];
+function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+function T(f,ms){setTimeout(f,ms)}
+function round(){var r=R[k%R.length];k++;S.innerHTML='';B.innerHTML='';
+r[0].split(' ').forEach(function(w){S.appendChild(el('span','',w))});
+var bl=el('span','blank');S.appendChild(bl);
+var top=r[1][0][1],rows=[];
+r[1].forEach(function(o,i){T(function(){var row=el('div','row');row.appendChild(el('div','w',o[0]));var bar=el('div','bar');row.appendChild(bar);row.appendChild(el('div','p',o[1]+'%'));B.appendChild(row);rows.push(row);
+T(function(){row.classList.add('on');bar.style.width=(o[1]/top*900+10)+'px'},40)},800+i*450)});
+var t=800+r[1].length*450+700;
+T(function(){rows[0].classList.add('win')},t);
+T(function(){bl.textContent=r[1][0][0];bl.classList.add('f')},t+800);
+T(round,t+3800)}
+round();
+</script></body></html></x-embed>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#4A4E6E">The numbers are made up, but this is exactly the idea: score every possible word, then pick a likely one.</p>
+<aside>This is the big secret: a chatbot is a super-powered “guess the next word” machine. It has read a huge amount of text, so it’s very good at guessing what usually comes next. Watch: for “The cat sat on the…” it scores every word it knows. “Mat” is very likely, “banana” is very unlikely. It picks one, adds it on, and goes again. Ask the group: what would YOU guess next?</aside>
+</section>

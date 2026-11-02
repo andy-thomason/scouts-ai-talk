@@ -1,0 +1,42 @@
+<section id="diffusion" data-transition="fade" style="background:#1B1D3A;color:#FFF8EC;font-family:'Nunito Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:32px">
+<p style="font-size:24px;font-weight:800;letter-spacing:4px;text-transform:uppercase;color:#FF8A3D">Part 5 · Making pictures</p>
+<h2 style="font-family:'Fredoka', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1;width:660px">From fuzz to a cat on a fence</h2>
+<p style="font-size:32px;line-height:1.4;color:#C9CBE8;width:640px">A picture-making AI starts with pure static, like a broken TV.</p>
+<p style="font-size:32px;line-height:1.4;color:#C9CBE8;width:640px">Step by step it cleans away the noise, guessing what a cat on a fence should look like.</p>
+<p style="font-size:32px;line-height:1.4;font-weight:700;width:640px">Big shapes come first. Tiny details come last.</p>
+<x-embed style="position:absolute;left:860px;top:190px;width:932px;height:720px"><!doctype html><html><head><meta charset="utf-8"><style>
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:transparent}
+#st{position:absolute;left:0;top:0;width:932px;height:720px;transform-origin:0 0;font-family:ui-rounded,"Avenir Next","Segoe UI",Arial,sans-serif;color:#FFF8EC}
+canvas{position:absolute;left:0;top:0;width:932px;height:640px;border-radius:24px}
+#bar{position:absolute;left:8px;right:8px;top:664px;display:flex;justify-content:space-between;font-size:30px;font-weight:700}
+#lab{color:#C9CBE8}
+</style></head><body><div id="st"><canvas id="c" width="364" height="250"></canvas><div id="bar"><span>Prompt: “a cat on a fence”</span><span id="lab"></span></div></div>
+<script>
+var st=document.getElementById('st');function fit(){var z=Math.min(innerWidth/932,innerHeight/720);st.style.transform='scale('+z+')'}fit();onresize=fit;
+var W=364,H=250,cv=document.getElementById('c'),cx=cv.getContext('2d'),lab=document.getElementById('lab');
+var tg=document.createElement('canvas');tg.width=W;tg.height=H;var g=tg.getContext('2d');
+var sk=g.createLinearGradient(0,0,0,H);sk.addColorStop(0,'#2B2D6E');sk.addColorStop(.55,'#C2508A');sk.addColorStop(1,'#FF9A4D');g.fillStyle=sk;g.fillRect(0,0,W,H);
+g.fillStyle='#FFF2C4';g.beginPath();g.arc(292,52,24,0,7);g.fill();
+g.fillStyle='#FFF8EC';[[40,30],[90,58],[200,24],[250,90],[340,120],[20,95],[130,20]].forEach(function(p){g.fillRect(p[0],p[1],2,2)});
+for(var x=4;W>x;x+=30){g.fillStyle='#8B5A2B';g.fillRect(x,146,24,H-146);g.fillStyle='#6E4320';g.fillRect(x+19,146,5,H-146)}
+g.fillStyle='#5A3519';g.fillRect(0,176,W,10);g.fillRect(0,222,W,10);
+g.fillStyle='#7A4A22';g.fillRect(0,138,W,10);
+g.fillStyle='#15131F';
+g.beginPath();g.ellipse(150,110,30,30,0,0,7);g.fill();
+g.beginPath();g.arc(150,70,21,0,7);g.fill();
+g.beginPath();g.moveTo(131,62);g.lineTo(134,37);g.lineTo(148,52);g.fill();
+g.beginPath();g.moveTo(152,52);g.lineTo(166,37);g.lineTo(169,62);g.fill();
+g.strokeStyle='#15131F';g.lineWidth=8;g.lineCap='round';g.beginPath();g.moveTo(176,128);g.quadraticCurveTo(208,150,194,204);g.stroke();
+g.fillStyle='#F5D33A';g.beginPath();g.arc(142,68,3.5,0,7);g.fill();g.beginPath();g.arc(158,68,3.5,0,7);g.fill();
+var sm=document.createElement('canvas'),sc=sm.getContext('2d'),wk=document.createElement('canvas');wk.width=W;wk.height=H;var wc=wk.getContext('2d');
+var out=cx.createImageData(W,H),N=45,k=0;
+function frame(){var p=k/N,a=Math.pow(1-p,1.5),w=Math.max(4,Math.round(5*Math.pow(W/5,p))),h=Math.max(3,Math.round(w*H/W));
+sm.width=w;sm.height=h;sc.drawImage(tg,0,0,w,h);wc.imageSmoothingEnabled=true;wc.clearRect(0,0,W,H);wc.drawImage(sm,0,0,W,H);
+var b=wc.getImageData(0,0,W,H).data,o=out.data,r=1-a;
+for(var i=0;o.length>i;i+=4){o[i]=b[i]*r+Math.random()*255*a;o[i+1]=b[i+1]*r+Math.random()*255*a;o[i+2]=b[i+2]*r+Math.random()*255*a;o[i+3]=255}
+cx.putImageData(out,0,0);lab.textContent='step '+k+' of '+N}
+function go(){frame();if(N>k){k++;setTimeout(go,k==1?1500:130)}else{setTimeout(function(){k=0;go()},4500)}}
+go();
+</script></body></html></x-embed>
+<aside>Picture-making AIs are a different kind of AI, called diffusion models. They start with random noise — like TV static — and in lots of small steps they remove a bit of noise each time, guided by the words in the prompt. Notice the big blobs of colour arrive first (sky, fence, a dark shape), and the details like ears and eyes come last. Game: “human diffusion”. Everyone stands scattered randomly around the room — that’s the noise. Each time you clap, everyone takes ONE step towards a shape marked on the floor (a smiley face or a cat outline in tape). After about ten claps, the picture appears out of the crowd.</aside>
+</section>

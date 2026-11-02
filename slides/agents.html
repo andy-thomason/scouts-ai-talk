@@ -1,0 +1,44 @@
+<section id="agents" data-transition="fade" style="background:#FFF8EC;color:#1B1D3A;font-family:'Nunito Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:24px">
+<p style="font-size:24px;font-weight:800;letter-spacing:4px;text-transform:uppercase;color:#B5480C">Part 4 · Agents</p>
+<h2 style="font-family:'Fredoka', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1">Agents can get things done</h2>
+<x-embed style="position:absolute;left:128px;top:320px;width:1664px;height:620px"><!doctype html><html><head><meta charset="utf-8"><style>
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:transparent}
+#st{position:absolute;left:0;top:0;width:1664px;height:620px;transform-origin:0 0;font-family:ui-rounded,"Avenir Next","Segoe UI",Arial,sans-serif;color:#1B1D3A}
+#chat{position:absolute;left:0;top:0;width:820px;height:600px;box-sizing:border-box;background:#FFFFFF;border:3px solid #EADFCB;border-radius:32px;padding:28px;display:flex;flex-direction:column;gap:18px}
+.m{max-width:640px;padding:18px 26px;font-size:32px;font-weight:700;line-height:1.3;border-radius:26px;opacity:0;transform:translateY(16px);transition:all .4s}
+.m.on{opacity:1;transform:none}
+.u{align-self:flex-end;background:#1B1D3A;color:#FFF8EC;border-bottom-right-radius:6px}
+.g{align-self:flex-start;background:#FFF1E3;border:3px solid #FF8A3D;border-bottom-left-radius:6px}
+#side{position:absolute;left:900px;top:10px;width:764px}
+#side h3{margin:0 0 24px;font-size:32px;letter-spacing:3px;text-transform:uppercase;color:#B5480C}
+.s{display:flex;align-items:center;gap:26px;height:84px;font-size:32px;font-weight:700;opacity:.35;transition:opacity .4s}
+.s.act,.s.done{opacity:1}
+.d{width:52px;height:52px;border-radius:50%;border:5px solid #C9CBE8;box-sizing:border-box;display:flex;align-items:center;justify-content:center;font-size:30px;color:#FFF8EC;transition:all .3s}
+.s.act .d{border-color:#FF8A3D;animation:pu 0.8s infinite}
+.s.done .d{border-color:#2E7D4F;background:#2E7D4F}
+.s.wait .d{border-color:#B5480C;background:#FF8A3D;animation:none}
+@keyframes pu{50%{transform:scale(1.2)}}
+</style></head><body><div id="st"><div id="chat"></div>
+<div id="side"><h3>Behind the scenes</h3></div></div>
+<script>
+var st=document.getElementById('st'),CH=document.getElementById('chat'),SD=document.getElementById('side');
+function fit(){var z=Math.min(innerWidth/1664,innerHeight/620);st.style.transform='scale('+z+')'}fit();onresize=fit;
+var S=['🔎 Open the train website','📋 Compare the prices','✋ Stop and ask you first','💳 Pay for the ticket','✉️ Email you the ticket'],E=[];
+S.forEach(function(t){var r=document.createElement('div');r.className='s';var d=document.createElement('div');d.className='d';r.appendChild(d);var x=document.createElement('div');x.textContent=t;r.appendChild(x);SD.appendChild(r);E.push(r)});
+function T(f,ms){setTimeout(f,ms)}
+function msg(c,t){return function(){var m=document.createElement('div');m.className='m '+c;m.textContent=t;CH.appendChild(m);T(function(){m.classList.add('on')},30)}}
+function act(i){return function(){E[i].className='s act'}}
+function wait(i){return function(){E[i].className='s act wait'}}
+function done(i){return function(){E[i].className='s done';E[i].firstChild.textContent='✓'}}
+function run(){CH.innerHTML='';E.forEach(function(e){e.className='s';e.firstChild.textContent=''});
+var q=[[500,msg('u','Book me a train to London on Saturday morning, please.')],
+[1600,act(0)],[2800,done(0)],[3000,act(1)],[4200,done(1)],
+[4400,msg('g','Found 3 trains. The 09:15 is cheapest.')],
+[5400,wait(2)],[5600,msg('g','Shall I pay £24 with your card?')],
+[8200,msg('u','Yes please!')],[8700,done(2)],[8900,act(3)],[10000,done(3)],[10200,act(4)],[11200,done(4)],
+[11500,msg('g','Done! Ticket booked and emailed to you. 🎟')]];
+q.forEach(function(e){T(e[1],e[0])});T(run,17000)}
+run();
+</script></body></html></x-embed>
+<aside>An agent is a chatbot that can use tools to actually DO things, not just answer. It works step by step: open the website, compare prices, and — really important — stop and check with you before it spends money or sends something in your name. Game: one scout is the customer, one is the Agent. The customer says “Book me a train to London.” The Agent has to say each step out loud as they act it out, and must ask the customer’s permission before “paying”. Everyone else shouts “STOP!” if the Agent forgets to ask. The £24 and the times are made-up examples.</aside>
+</section>

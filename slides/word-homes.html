@@ -1,0 +1,45 @@
+<section id="word-homes" data-transition="fade" style="background:#FFF8EC;color:#1B1D3A;font-family:'Nunito Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:24px">
+<p style="font-size:24px;font-weight:800;letter-spacing:4px;text-transform:uppercase;color:#B5480C">Part 2 · Word homes</p>
+<h2 style="font-family:'Fredoka', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1">Every word has a home address</h2>
+<x-embed style="position:absolute;left:128px;top:320px;width:1664px;height:620px"><!doctype html><html><head><meta charset="utf-8"><style>
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:transparent}
+#st{position:absolute;left:0;top:0;width:1664px;height:620px;transform-origin:0 0;font-family:ui-rounded,"Avenir Next","Segoe UI",Arial,sans-serif;color:#1B1D3A}
+.w{position:absolute;transform:translate(-50%,-50%);font-size:38px;font-weight:700;white-space:nowrap;color:#6A6E8E;transition:color 1s,transform .5s}
+.w.go{transition:left 2.4s cubic-bezier(.5,0,.2,1),top 2.4s cubic-bezier(.5,0,.2,1),color 1s,transform .5s}
+.w.hi{transform:translate(-50%,-50%) scale(1.3)}
+.blob{position:absolute;width:540px;height:260px;border-radius:50%;transform:translate(-50%,-50%);opacity:0;transition:opacity 1s}
+.lab{position:absolute;transform:translateX(-50%);font-size:26px;font-weight:800;letter-spacing:4px;text-transform:uppercase;opacity:0;transition:opacity 1s}
+#cap{position:absolute;left:832px;top:310px;transform:translate(-50%,-50%);font-size:40px;font-weight:700;color:#1B1D3A;white-space:nowrap;transition:opacity .5s}
+svg{position:absolute;left:0;top:0}
+line{stroke-width:6;stroke-linecap:round;opacity:0;transition:opacity .6s}
+</style></head><body><div id="st"><svg width="1664" height="620" viewBox="0 0 1664 620"><line id="l1" stroke="#FF8A3D"/><line id="l2" stroke="#B5480C" stroke-dasharray="14 14"/></svg><div id="cap"></div></div>
+<script>
+var st=document.getElementById('st'),cap=document.getElementById('cap');
+function fit(){var z=Math.min(innerWidth/1664,innerHeight/620);st.style.transform='scale('+z+')'}fit();onresize=fit;
+var G=[{n:"animals",c:[330,170],w:["dog","cat","puppy","kitten","horse","rabbit"],col:"#1F6FB8"},
+{n:"food",c:[1330,170],w:["bread","apple","banana","pizza","cake","cheese"],col:"#B5480C"},
+{n:"colours",c:[330,450],w:["blue","red","green","yellow","purple"],col:"#6B3FA0"},
+{n:"feelings",c:[1330,450],w:["happy","sad","excited","angry","calm"],col:"#2E7D4F"}];
+var E={},all=[],blobs=[];
+G.forEach(function(g){var b=document.createElement('div');b.className='blob';b.style.left=g.c[0]+'px';b.style.top=g.c[1]+'px';b.style.background=g.col+'1F';st.insertBefore(b,st.firstChild);
+var l=document.createElement('div');l.className='lab';l.textContent=g.n;l.style.color=g.col;l.style.left=g.c[0]+'px';l.style.top=(g.c[1]-160)+'px';st.appendChild(l);blobs.push(b,l);
+var m=g.w.length-1;g.w.forEach(function(w,j){var x=g.c[0],y=g.c[1];if(j){var a=-Math.PI/2+(j-1)*2*Math.PI/m;x+=190*Math.cos(a);y+=88*Math.sin(a)}
+var e=document.createElement('div');e.className='w';e.textContent=w;st.appendChild(e);var o={e:e,x:x,y:y,col:g.col};E[w]=o;all.push(o)})});
+function ln(id,a,b){var L=document.getElementById(id),dx=b.x-a.x,dy=b.y-a.y,d=Math.sqrt(dx*dx+dy*dy),s=62/d;
+L.setAttribute('x1',a.x+dx*s);L.setAttribute('y1',a.y+dy*s);L.setAttribute('x2',b.x-dx*s);L.setAttribute('y2',b.y-dy*s);return L}
+var L1=ln('l1',E.puppy,E.dog),L2=ln('l2',E.puppy,E.cheese);
+function T(f,ms){setTimeout(f,ms)}
+function say(t){cap.style.opacity=0;T(function(){cap.textContent=t;cap.style.opacity=1},500)}
+function run(){L1.style.opacity=0;L2.style.opacity=0;blobs.forEach(function(b){b.style.opacity=0});
+all.forEach(function(o){o.e.className='w';o.e.style.color='#6A6E8E';o.e.style.left=(90+Math.random()*1484)+'px';o.e.style.top=(40+Math.random()*540)+'px'});
+say('Words start out all jumbled up…');
+T(function(){say('…then the AI learns where each word lives');all.forEach(function(o){o.e.className='w go';o.e.style.left=o.x+'px';o.e.style.top=o.y+'px';o.e.style.color=o.col})},1800);
+T(function(){blobs.forEach(function(b){b.style.opacity=1})},4600);
+T(function(){say('Similar words live close together');L1.style.opacity=1;E.puppy.e.classList.add('hi');E.dog.e.classList.add('hi')},6400);
+T(function(){say('Different words live far apart');L2.style.opacity=1;E.dog.e.classList.remove('hi');E.cheese.e.classList.add('hi')},9600);
+T(function(){cap.style.opacity=0;all.forEach(function(o){o.e.className='w go';o.e.style.color='#6A6E8E'})},13600);
+T(run,14400)}
+run();
+</script></body></html></x-embed>
+<aside>A chatbot can’t understand words the way we do — it only understands numbers. So every word gets a home address, a bit like a house on a street. Words that mean similar things live in the same neighbourhood: puppy lives near dog, but a long way from cheese. Game: give each Word Finder a word card (cat, dog, puppy, apple, pizza, red, blue, happy, sad…). Make each corner of the room a neighbourhood. Everyone has to go and stand where their word belongs, near words that are similar. Then ask a tricky one: where should “hot dog” stand? Between animals and food! Real chatbots give each word hundreds of address numbers, not just two, so a word can be near lots of different neighbourhoods at once.</aside>
+</section>

@@ -1,0 +1,36 @@
+<section id="story-game" data-transition="fade" style="background:#1B1D3A;color:#FFF8EC;font-family:'Nunito Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:24px">
+<p style="font-size:24px;font-weight:800;letter-spacing:4px;text-transform:uppercase;color:#FF8A3D">Game time</p>
+<h2 style="font-family:'Fredoka', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1">You are the guesser: one word each</h2>
+<x-embed style="position:absolute;left:128px;top:330px;width:1664px;height:600px"><!doctype html><html><head><meta charset="utf-8"><style>
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:transparent}
+#st{position:absolute;left:0;top:0;width:1664px;height:600px;transform-origin:0 0;font-family:ui-rounded,"Avenir Next","Segoe UI",Arial,sans-serif;color:#FFF8EC}
+#story{font-size:64px;font-weight:700;line-height:1.35;height:270px}
+.pr{color:#FF8A3D}
+.sp{display:inline-block;opacity:0;transform:translateY(20px) scale(.8);transition:all .4s}
+.sp.on{opacity:1;transform:none}
+.sp.nw{color:#3DA5FF}
+.a{position:absolute;top:450px;width:110px;height:110px;border-radius:50%;background:#2E3160;border:4px solid #4A4E8A;color:#C9CBE8;font-size:44px;font-weight:700;display:flex;align-items:center;justify-content:center;transition:all .3s;box-sizing:border-box}
+.a.on{background:#FF8A3D;color:#1B1D3A;border-color:#FFF8EC;transform:scale(1.15)}
+#bub{position:absolute;top:320px;background:#FFF8EC;color:#1B1D3A;font-size:44px;font-weight:700;padding:14px 30px;border-radius:24px;transform:translateX(-50%);opacity:0;transition:left .3s,opacity .3s;white-space:nowrap}
+</style></head><body><div id="st"><div id="story"></div><div id="bub"></div></div>
+<script>
+var st=document.getElementById('st'),SY=document.getElementById('story'),BU=document.getElementById('bub');
+function fit(){var z=Math.min(innerWidth/1664,innerHeight/600);st.style.transform='scale('+z+')'}fit();onresize=fit;
+var W="there was a dragon who was scared of socks .".split(' '),A=[],i;
+for(i=0;W.length>i;i++){var a=document.createElement('div');a.className='a';a.textContent=i+1;a.style.left=(102+i*150)+'px';st.appendChild(a);A.push(a)}
+function sp(t,c){var e=document.createElement('span');e.className='sp '+c;e.textContent=t;SY.appendChild(e);return e}
+function T(f,ms){setTimeout(f,ms)}
+function step(j){return function(){A.forEach(function(a){a.classList.remove('on')});A[j].classList.add('on');
+BU.textContent=W[j]=='.'?'full stop!':W[j];BU.style.left=(157+j*150)+'px';BU.style.opacity=1;
+T(function(){[].forEach.call(SY.querySelectorAll('.nw'),function(e){e.classList.remove('nw')});
+if(W[j]!='.')SY.appendChild(document.createTextNode(' '));var e=sp(W[j],'nw');T(function(){e.classList.add('on')},30)},600)}}
+function run(){SY.innerHTML='';"Once upon a time".split(' ').forEach(function(w,n){if(n)SY.appendChild(document.createTextNode(' '));sp(w,'pr on')});
+BU.style.opacity=0;A.forEach(function(a){a.classList.remove('on')});
+for(var j=0;W.length>j;j++)T(step(j),1500+j*1200);
+var end=1500+W.length*1200;
+T(function(){BU.style.opacity=0;A.forEach(function(a){a.classList.remove('on')});[].forEach.call(SY.querySelectorAll('.nw'),function(e){e.classList.remove('nw')})},end);
+T(run,end+4000)}
+run();
+</script></body></html></x-embed>
+<aside>Get everyone in a circle. The prompt is “Once upon a time”. Going round the circle, each scout adds ONE word — that’s exactly what the chatbot does. Rules: one word only, it has to make sense with what came before, and you can’t plan ahead. Round 2: play as a “boring AI” — everyone must pick the most obvious word. Round 3: play as a “creative AI” — pick a surprising word that still makes sense. Real chatbots have a dial for this, called temperature. Ask: which story was better? Which made more sense?</aside>
+</section>
