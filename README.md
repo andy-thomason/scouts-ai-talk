@@ -2,7 +2,13 @@
 
 A talk for teenagers (written for a scout group) on how chatbots and other AI systems work. Each scout plays one part of the AI: Guessers, Word Finders, Attention, Researchers and Agents. An animated slideshow sets up each part.
 
-**Live deck:** https://claude.ai/artifact/75Au5vHbDepAQ5t8UftLwY
+**Slides on GitHub Pages:** https://andy-thomason.github.io/scouts-ai-talk/
+
+**Claude deck:** https://claude.ai/artifact/75Au5vHbDepAQ5t8UftLwY
+
+## Presenting
+
+Open the Pages link and press **F** for full screen. Use the arrow keys, space or a click to move on (slides with reveals step through them first), and press **N** to show the speaker notes. You can link straight to a slide with `#slide-7`. To run it offline, serve the folder locally, for example `python3 -m http.server`, and open http://localhost:8000.
 
 ## What's covered
 
@@ -17,6 +23,7 @@ The game instructions for each part are in the speaker notes (the `<aside>` at t
 
 ## Layout
 
+- `index.html`: the standalone viewer. It loads `deck.json` and the slides, scales them to the window and runs the animations in sandboxed iframes.
 - `deck.json`: slide order, sections and fonts (Fredoka and Nunito Sans from Google Fonts).
 - `slides/<id>.html`: one slide each, a 1920×1080 `<section>` with inline styles. The animations are self-contained `<x-embed>` pages with plain JavaScript and no dependencies.
 - `images/`: the photos. Slides refer to them by their uploaded asset URLs (`/_blob/<id>`):
