@@ -28,3 +28,8 @@ cover · roles · next-word · story-game · the-loop · word-homes · capitals 
 - Animated embeds: next-word probability bars, story game with scouts taking turns, words gliding to their homes, capitals arrows, bread lookup, train-booking agent, noise-to-cat diffusion.
 - Look: navy #1B1D3A / cream #FFF8EC, orange #FF8A3D and blue #3DA5FF accents; Fredoka headings, Nunito Sans text.
 - Speaker notes hold the game instructions for each part.
+- Personal talk: no Fractile branding.
+
+## Repo
+
+Private GitHub repo: https://github.com/andy-thomason/scouts-ai-talk (local clone ~/scouts-ai-talk). Commits as Andy Thomason <andy@atomicincrement.com>.
