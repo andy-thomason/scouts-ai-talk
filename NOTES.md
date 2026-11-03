@@ -32,4 +32,4 @@ cover · roles · next-word · story-game · the-loop · word-homes · capitals 
 
 ## Repo
 
-Private GitHub repo: https://github.com/andy-thomason/scouts-ai-talk (local clone ~/scouts-ai-talk). Commits as Andy Thomason <andy@atomicincrement.com>.
+Public GitHub repo: https://github.com/andy-thomason/scouts-ai-talk, slides on Pages at https://andy-thomason.github.io/scouts-ai-talk/ (local clone ~/scouts-ai-talk). Commits as Andy Thomason <andy@atomicincrement.com>.
