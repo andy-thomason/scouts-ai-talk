@@ -30,13 +30,13 @@ The game instructions for each part are in the speaker notes (the `<aside>` at t
 
 | Image | Asset id |
 |---|---|
-| `images/agibot.jpg` | `bd54ea9691c99b6d2568eaca7088b89b` |
-| `images/asimo.jpg` | `528b16025387e85106cce60dd2ab00ec` |
-| `images/atlas.jpg` | `750ba273f93d5a0e5c24bf484d81c472` |
+| `images/agibot.jpg` | `7377d471f8348210ebbd439efe2a3c15` |
+| `images/asimo.jpg` | `497b7986ab9b8f338c590ad9fe0a87d4` |
+| `images/atlas.jpg` | `b504f257b0973c180438cb241ebd38dc` |
 | `images/bdx.jpg` | `f109b20c465b81815ec316ad3a451690` |
-| `images/g1.jpg` | `f6bcb9c1747af4cb64494338a8131fd0` |
+| `images/g1.jpg` | `c750fe774be20da5dda5a3c6f3422184` |
 | `images/galbot.jpg` | `7365cb6847d5357a4dc6f43e8ea60732` |
-| `images/optimus.jpg` | `3f20cb8124805b4540ee475be049c429` |
+| `images/optimus.jpg` | `1fd4d3ae7a52531d45962803c859707f` |
 | `images/wotw14.jpg` | `5bb08caccdb221944e38cd9523160f2a` |
 
 ## Image credits
