@@ -17,14 +17,14 @@ Open the Pages link and press **F** for full screen. Use the arrow keys, space o
 3. **Looking things up**: "Where can I buy a loaf of bread?" uses your location, a web search and opening times.
 4. **Agents**: booking a train and sending emails, always asking before paying.
 5. **Making pictures**: a diffusion model turns noise into a cat on a fence.
-6. **Embodied AI**: humanoid robots (with a focus on the Chinese companies leading the next wave), Nvidia's duck robot Blue, and an "AI apocalypse" slide: *perhaps not this :)*
+6. **Embodied AI**: humanoid robots (with a focus on the Chinese companies leading the next wave), Nvidia's duck robot Blue, a Terminator-style home robot, and a "Judgment Day" slide where Skynet comes online. The talk ends on *I'll be back.*
 
 The game instructions for each part are in the speaker notes (the `<aside>` at the end of each slide). [NOTES.md](NOTES.md) has the original brief.
 
 ## Layout
 
 - `index.html`: the standalone viewer. It loads `deck.json` and the slides, scales them to the window and runs the animations in sandboxed iframes.
-- `deck.json`: slide order, sections and fonts (Fredoka and Nunito Sans from Google Fonts).
+- `deck.json`: slide order, sections and fonts (Oswald, Barlow and Share Tech Mono from Google Fonts).
 - `slides/<id>.html`: one slide each, a 1920×1080 `<section>` with inline styles. The animations are self-contained `<x-embed>` pages with plain JavaScript and no dependencies.
 - `images/`: the photos. Slides refer to them by their uploaded asset URLs (`/_blob/<id>`):
 

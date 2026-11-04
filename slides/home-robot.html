@@ -1,0 +1,65 @@
+<section id="home-robot" data-transition="fade" style="background:radial-gradient(ellipse at 50% 40%, #1A1B20 0%, #08080A 70%);color:#E8E6E3;font-family:'Barlow', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:24px">
+<p style="font-family:'Share Tech Mono', monospace;font-size:26px;letter-spacing:4px;text-transform:uppercase;color:#E0201B">Mission 6 // Embodied AI</p>
+<h2 style="font-family:'Oswald', 'Arial Narrow', Arial, sans-serif;text-transform:uppercase;letter-spacing:1px;font-size:72px;font-weight:600;line-height:1.1">Your home robot, 2029</h2>
+<x-embed style="position:absolute;left:128px;top:300px;width:1664px;height:640px"><!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap"><style>
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:transparent}
+#st{position:absolute;left:0;top:0;width:1664px;height:640px;transform-origin:0 0;font-family:'Share Tech Mono',ui-monospace,Menlo,monospace;color:#F2EDE8;overflow:hidden}
+#sk{position:absolute;left:40px;top:0;width:540px;height:640px}
+.eye{animation:gl 2.6s infinite}
+@keyframes gl{0%,100%{opacity:1}48%{opacity:1}50%{opacity:.25}52%{opacity:1}}
+#hud{position:absolute;left:660px;top:0;width:1004px;height:640px;box-sizing:border-box;padding:34px 44px;background:linear-gradient(135deg,rgba(150,10,8,.55),rgba(40,0,0,.65));border:2px solid #E0201B}
+#hud:before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(0,0,0,.25) 0 2px,transparent 2px 5px);pointer-events:none}
+.ln{font-size:38px;line-height:1.5;white-space:pre;min-height:57px}
+.ln.big{font-size:48px;color:#FFFFFF}
+.cur:after{content:'\2588';animation:bl .6s steps(1) infinite}
+@keyframes bl{50%{opacity:0}}
+#scan{position:absolute;left:0;width:1664px;height:4px;background:rgba(255,42,31,.7);box-shadow:0 0 18px #FF2A1F;animation:sc 4s linear infinite}
+@keyframes sc{0%{top:-10px}100%{top:650px}}
+.c{position:absolute;width:44px;height:44px;border:0 solid #FF2A1F}
+</style></head><body><div id="st">
+<svg id="sk" viewBox="0 0 400 480">
+<defs>
+<linearGradient id="m" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F0F3F6"/><stop offset=".45" stop-color="#8E979F"/><stop offset="1" stop-color="#2A2E33"/></linearGradient>
+<linearGradient id="d" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6E767E"/><stop offset="1" stop-color="#1C1F23"/></linearGradient>
+<radialGradient id="e"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".25" stop-color="#FF3A2A"/><stop offset=".6" stop-color="#C00A06"/><stop offset="1" stop-color="#C00A06" stop-opacity="0"/></radialGradient>
+</defs>
+<g stroke="#1C1F23" stroke-width="3">
+<path d="M150 395 L140 480 M175 400 L172 480 M200 402 L200 480 M225 400 L228 480 M250 395 L260 480" stroke="#3A3F45" stroke-width="14"/>
+<path d="M150 395 L140 480 M200 402 L200 480 M250 395 L260 480" stroke="#9AA3AB" stroke-width="4"/>
+<path d="M78 205 C66 95 140 28 200 28 C260 28 334 95 322 205 L312 262 L88 262 Z" fill="url(#m)"/>
+<path d="M120 60 C150 44 175 40 200 40 L200 150 C170 150 140 160 118 175 Z" fill="#FFFFFF" opacity=".18" stroke="none"/>
+<path d="M200 30 L200 168" stroke="#4A5057" stroke-width="3"/>
+<path d="M92 178 Q200 148 308 178 L302 206 Q200 182 98 206 Z" fill="url(#d)"/>
+<ellipse cx="150" cy="218" rx="40" ry="27" fill="#070708"/>
+<ellipse cx="250" cy="218" rx="40" ry="27" fill="#070708"/>
+<path d="M86 228 L140 252 L132 306 L94 296 Z M314 228 L260 252 L268 306 L306 296 Z" fill="url(#m)"/>
+<path d="M186 248 L214 248 L208 292 L192 292 Z" fill="#070708"/>
+<path d="M98 296 L124 372 M302 296 L276 372" stroke="#2A2E33" stroke-width="16"/>
+<path d="M98 296 L124 372 M302 296 L276 372" stroke="#B9C1C8" stroke-width="5"/>
+<rect x="126" y="298" width="148" height="26" fill="url(#d)"/>
+<path d="M118 338 L282 338 L266 392 Q200 414 134 392 Z" fill="url(#m)"/>
+</g>
+<g fill="#E8ECEF" stroke="#2A2E33" stroke-width="2" id="teeth"></g>
+<circle class="eye" cx="150" cy="218" r="30" fill="url(#e)"/>
+<circle class="eye" cx="250" cy="218" r="30" fill="url(#e)"/>
+</svg>
+<div id="hud"></div>
+<div id="scan"></div>
+</div>
+<script>
+var st=document.getElementById('st'),H=document.getElementById('hud'),TE=document.getElementById('teeth');
+function fit(){var z=Math.min(innerWidth/1664,innerHeight/640);st.style.transform='scale('+z+')'}fit();onresize=fit;
+for(var i=0;9>i;i++){var r1=document.createElementNS('http://www.w3.org/2000/svg','rect');r1.setAttribute('x',134+i*15);r1.setAttribute('y',314);r1.setAttribute('width',13);r1.setAttribute('height',22);TE.appendChild(r1);
+var r2=r1.cloneNode();r2.setAttribute('y',338);TE.appendChild(r2)}
+var L=['MODEL T-HOME 800 // ONLINE','SCANNING: TEENAGE BEDROOM','FOUND: 14 SOCKS, 3 MUGS, 1 OLD PIZZA','THREAT LEVEL: SEVERE','MISSION: TIDY ROOM','> HOOVER   > FOLD   > MAKE TEA','*I’LL BE BACK… WITH TEA.'];
+function T(f,ms){setTimeout(f,ms)}
+function type(el,s,j,done){if(j>s.length){el.className=el.className.replace(' cur','');done();return}el.textContent=s.slice(0,j);T(function(){type(el,s,j+1,done)},38)}
+function line(k){if(k==L.length){T(run,5000);return}
+var s=L[k],e=document.createElement('div');e.className='ln cur';if(s.charAt(0)=='*'){s=s.slice(1);e.className='ln big cur'}H.appendChild(e);
+type(e,s,0,function(){T(function(){line(k+1)},k==L.length-2?1200:500)})}
+function run(){H.innerHTML='';T(function(){line(0)},600)}
+run();
+</script></body></html></x-embed>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:28px;color:#9AA0A8">It does the washing-up. It folds your socks. It will be back. (Original drawing, inspired by the films.)</p>
+<aside>Here’s your home robot of the future. Yes, it looks like a Terminator: in the films, 2029 is the year humans fight the machines. Real home robots are much less scary, but they are coming: companies like 1X, Figure and Tesla are already testing humanoid robots in people’s homes, doing jobs like tidying and loading the dishwasher. Ask: what job would you give your home robot? What would you NEVER let it do? Who should be able to switch it off?</aside>
+</section>

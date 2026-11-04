@@ -1,20 +1,20 @@
-<section id="next-word" data-transition="fade" style="background:#FFF8EC;color:#1B1D3A;font-family:'Nunito Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:24px">
-<p style="font-size:24px;font-weight:800;letter-spacing:4px;text-transform:uppercase;color:#B5480C">Part 1 · Guessing</p>
-<h2 style="font-family:'Fredoka', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1">A chatbot just guesses the next word</h2>
-<x-embed style="position:absolute;left:128px;top:320px;width:1664px;height:580px"><!doctype html><html><head><meta charset="utf-8"><style>
+<section id="next-word" data-transition="fade" style="background:radial-gradient(ellipse at 50% 40%, #1A1B20 0%, #08080A 70%);color:#E8E6E3;font-family:'Barlow', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:24px">
+<p style="font-family:'Share Tech Mono', monospace;font-size:26px;letter-spacing:4px;text-transform:uppercase;color:#FF2A1F">Mission 1 // Guessing</p>
+<h2 style="font-family:'Oswald', 'Arial Narrow', Arial, sans-serif;text-transform:uppercase;letter-spacing:1px;font-size:72px;font-weight:600;line-height:1.1">A chatbot just guesses the next word</h2>
+<x-embed style="position:absolute;left:128px;top:320px;width:1664px;height:580px"><!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400..700&display=swap"><style>
 html,body{margin:0;width:100%;height:100%;overflow:hidden;background:transparent}
-#st{position:absolute;left:0;top:0;width:1664px;height:580px;transform-origin:0 0;font-family:ui-rounded,"Avenir Next","Segoe UI",Arial,sans-serif;color:#1B1D3A}
+#st{position:absolute;left:0;top:0;width:1664px;height:580px;transform-origin:0 0;font-family:'Oswald','Arial Narrow',Arial,sans-serif;color:#E8E6E3}
 #s{font-size:72px;font-weight:700;height:110px;display:flex;align-items:flex-end;gap:24px;white-space:nowrap}
-.blank{display:inline-block;min-width:220px;height:90px;border-bottom:10px solid #FF8A3D;color:#D9620F;transition:border-color .4s}
+.blank{display:inline-block;min-width:220px;height:90px;border-bottom:10px solid #E0201B;color:#FF2A1F;transition:border-color .4s}
 .blank.f{border-color:transparent}
 #b{margin-top:44px}
 .row{display:flex;align-items:center;gap:28px;height:68px;margin-bottom:12px;font-size:44px;opacity:0;transform:translateX(-40px);transition:opacity .5s,transform .5s}
 .row.on{opacity:1;transform:none}
 .w{width:280px;text-align:right;font-weight:700;transition:color .4s}
-.bar{height:52px;border-radius:14px;background:#3DA5FF;width:0;transition:width 1s cubic-bezier(.2,.8,.2,1),background .4s}
-.p{font-size:36px;color:#4A4E6E}
-.row.win .bar{background:#FF8A3D}
-.row.win .w{color:#D9620F}
+.bar{height:52px;border-radius:2px;background:#7F95A8;width:0;transition:width 1s cubic-bezier(.2,.8,.2,1),background .4s}
+.p{font-size:36px;color:#9AA0A8}
+.row.win .bar{background:#E0201B}
+.row.win .w{color:#FF2A1F}
 </style></head><body><div id="st"><div id="s"></div><div id="b"></div></div>
 <script>
 var st=document.getElementById('st'),S=document.getElementById('s'),B=document.getElementById('b'),k=0;
@@ -36,6 +36,6 @@ T(function(){bl.textContent=r[1][0][0];bl.classList.add('f')},t+800);
 T(round,t+3800)}
 round();
 </script></body></html></x-embed>
-<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#4A4E6E">The numbers are made up, but this is exactly the idea: score every possible word, then pick a likely one.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#9AA0A8">The numbers are made up, but this is exactly the idea: score every possible word, then pick a likely one.</p>
 <aside>This is the big secret: a chatbot is a super-powered “guess the next word” machine. It has read a huge amount of text, so it’s very good at guessing what usually comes next. Watch: for “The cat sat on the…” it scores every word it knows. “Mat” is very likely, “banana” is very unlikely. It picks one, adds it on, and goes again. Ask the group: what would YOU guess next?</aside>
 </section>

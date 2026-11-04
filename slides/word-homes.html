@@ -1,25 +1,25 @@
-<section id="word-homes" data-transition="fade" style="background:#FFF8EC;color:#1B1D3A;font-family:'Nunito Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:24px">
-<p style="font-size:24px;font-weight:800;letter-spacing:4px;text-transform:uppercase;color:#B5480C">Part 2 · Word homes</p>
-<h2 style="font-family:'Fredoka', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1">Every word has a home address</h2>
-<x-embed style="position:absolute;left:128px;top:320px;width:1664px;height:620px"><!doctype html><html><head><meta charset="utf-8"><style>
+<section id="word-homes" data-transition="fade" style="background:radial-gradient(ellipse at 50% 40%, #1A1B20 0%, #08080A 70%);color:#E8E6E3;font-family:'Barlow', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:24px">
+<p style="font-family:'Share Tech Mono', monospace;font-size:26px;letter-spacing:4px;text-transform:uppercase;color:#FF2A1F">Mission 2 // Word homes</p>
+<h2 style="font-family:'Oswald', 'Arial Narrow', Arial, sans-serif;text-transform:uppercase;letter-spacing:1px;font-size:72px;font-weight:600;line-height:1.1">Every word has a home address</h2>
+<x-embed style="position:absolute;left:128px;top:320px;width:1664px;height:620px"><!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400..700&display=swap"><style>
 html,body{margin:0;width:100%;height:100%;overflow:hidden;background:transparent}
-#st{position:absolute;left:0;top:0;width:1664px;height:620px;transform-origin:0 0;font-family:ui-rounded,"Avenir Next","Segoe UI",Arial,sans-serif;color:#1B1D3A}
-.w{position:absolute;transform:translate(-50%,-50%);font-size:38px;font-weight:700;white-space:nowrap;color:#6A6E8E;transition:color 1s,transform .5s}
+#st{position:absolute;left:0;top:0;width:1664px;height:620px;transform-origin:0 0;font-family:'Oswald','Arial Narrow',Arial,sans-serif;color:#E8E6E3}
+.w{position:absolute;transform:translate(-50%,-50%);font-size:38px;font-weight:700;white-space:nowrap;color:#5F646C;transition:color 1s,transform .5s}
 .w.go{transition:left 2.4s cubic-bezier(.5,0,.2,1),top 2.4s cubic-bezier(.5,0,.2,1),color 1s,transform .5s}
 .w.hi{transform:translate(-50%,-50%) scale(1.3)}
 .blob{position:absolute;width:540px;height:260px;border-radius:50%;transform:translate(-50%,-50%);opacity:0;transition:opacity 1s}
 .lab{position:absolute;transform:translateX(-50%);font-size:26px;font-weight:800;letter-spacing:4px;text-transform:uppercase;opacity:0;transition:opacity 1s}
-#cap{position:absolute;left:832px;top:310px;transform:translate(-50%,-50%);font-size:40px;font-weight:700;color:#1B1D3A;white-space:nowrap;transition:opacity .5s}
+#cap{position:absolute;left:832px;top:310px;transform:translate(-50%,-50%);font-size:40px;font-weight:700;color:#E8E6E3;white-space:nowrap;transition:opacity .5s}
 svg{position:absolute;left:0;top:0}
 line{stroke-width:6;stroke-linecap:round;opacity:0;transition:opacity .6s}
-</style></head><body><div id="st"><svg width="1664" height="620" viewBox="0 0 1664 620"><line id="l1" stroke="#FF8A3D"/><line id="l2" stroke="#B5480C" stroke-dasharray="14 14"/></svg><div id="cap"></div></div>
+</style></head><body><div id="st"><svg width="1664" height="620" viewBox="0 0 1664 620"><line id="l1" stroke="#E0201B"/><line id="l2" stroke="#FF2A1F" stroke-dasharray="14 14"/></svg><div id="cap"></div></div>
 <script>
 var st=document.getElementById('st'),cap=document.getElementById('cap');
 function fit(){var z=Math.min(innerWidth/1664,innerHeight/620);st.style.transform='scale('+z+')'}fit();onresize=fit;
-var G=[{n:"animals",c:[330,170],w:["dog","cat","puppy","kitten","horse","rabbit"],col:"#1F6FB8"},
-{n:"food",c:[1330,170],w:["bread","apple","banana","pizza","cake","cheese"],col:"#B5480C"},
-{n:"colours",c:[330,450],w:["blue","red","green","yellow","purple"],col:"#6B3FA0"},
-{n:"feelings",c:[1330,450],w:["happy","sad","excited","angry","calm"],col:"#2E7D4F"}];
+var G=[{n:"animals",c:[330,170],w:["dog","cat","puppy","kitten","horse","rabbit"],col:"#7FB0D0"},
+{n:"food",c:[1330,170],w:["bread","apple","banana","pizza","cake","cheese"],col:"#FF2A1F"},
+{n:"colours",c:[330,450],w:["blue","red","green","yellow","purple"],col:"#B07FD0"},
+{n:"feelings",c:[1330,450],w:["happy","sad","excited","angry","calm"],col:"#4FA060"}];
 var E={},all=[],blobs=[];
 G.forEach(function(g){var b=document.createElement('div');b.className='blob';b.style.left=g.c[0]+'px';b.style.top=g.c[1]+'px';b.style.background=g.col+'1F';st.insertBefore(b,st.firstChild);
 var l=document.createElement('div');l.className='lab';l.textContent=g.n;l.style.color=g.col;l.style.left=g.c[0]+'px';l.style.top=(g.c[1]-160)+'px';st.appendChild(l);blobs.push(b,l);
@@ -31,13 +31,13 @@ var L1=ln('l1',E.puppy,E.dog),L2=ln('l2',E.puppy,E.cheese);
 function T(f,ms){setTimeout(f,ms)}
 function say(t){cap.style.opacity=0;T(function(){cap.textContent=t;cap.style.opacity=1},500)}
 function run(){L1.style.opacity=0;L2.style.opacity=0;blobs.forEach(function(b){b.style.opacity=0});
-all.forEach(function(o){o.e.className='w';o.e.style.color='#6A6E8E';o.e.style.left=(90+Math.random()*1484)+'px';o.e.style.top=(40+Math.random()*540)+'px'});
+all.forEach(function(o){o.e.className='w';o.e.style.color='#5F646C';o.e.style.left=(90+Math.random()*1484)+'px';o.e.style.top=(40+Math.random()*540)+'px'});
 say('Words start out all jumbled up…');
 T(function(){say('…then the AI learns where each word lives');all.forEach(function(o){o.e.className='w go';o.e.style.left=o.x+'px';o.e.style.top=o.y+'px';o.e.style.color=o.col})},1800);
 T(function(){blobs.forEach(function(b){b.style.opacity=1})},4600);
 T(function(){say('Similar words live close together');L1.style.opacity=1;E.puppy.e.classList.add('hi');E.dog.e.classList.add('hi')},6400);
 T(function(){say('Different words live far apart');L2.style.opacity=1;E.dog.e.classList.remove('hi');E.cheese.e.classList.add('hi')},9600);
-T(function(){cap.style.opacity=0;all.forEach(function(o){o.e.className='w go';o.e.style.color='#6A6E8E'})},13600);
+T(function(){cap.style.opacity=0;all.forEach(function(o){o.e.className='w go';o.e.style.color='#5F646C'})},13600);
 T(run,14400)}
 run();
 </script></body></html></x-embed>

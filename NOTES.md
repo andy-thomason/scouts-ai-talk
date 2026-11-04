@@ -20,13 +20,19 @@ Deck (Claude Slides artifact): https://claude.ai/artifact/75Au5vHbDepAQ5t8UftLwY
 - Bread example uses the real Birch Bread on Reading Road, Pangbourne (opening hours not verified; slides say "open now").
 - Photos come from Wikimedia Commons, with credits on the slides.
 
-## Deck plan (18 slides)
+## Changes (2026-11-04)
 
-cover · roles · next-word · story-game · the-loop · word-homes · capitals · attention · bread · lookups · agents · agents-jobs · diffusion · embodied · china-robots · duck · apocalypse · finish
+- Gritty AI-apocalypse theme with Terminator references: black and red HUD look, "Skynet training programme" cover, "Mission N //" section labels.
+- New home-robot slide: an original Terminator-style endoskeleton drawing with a red HUD ("MISSION: TIDY ROOM … I'LL BE BACK… WITH TEA").
+- Apocalypse slide now reveals "Skynet is online" (no more "Perhaps not this :)"); finish slide ends on "I'll be back."
+
+## Deck plan (19 slides)
+
+cover · roles · next-word · story-game · the-loop · word-homes · capitals · attention · bread · lookups · agents · agents-jobs · diffusion · embodied · china-robots · duck · home-robot · apocalypse · finish
 
 - Roles for scouts: Guessers, Word Finders, Attention, Researchers, Agents.
-- Animated embeds: next-word probability bars, story game with scouts taking turns, words gliding to their homes, capitals arrows, bread lookup, train-booking agent, noise-to-cat diffusion.
-- Look: navy #1B1D3A / cream #FFF8EC, orange #FF8A3D and blue #3DA5FF accents; Fredoka headings, Nunito Sans text.
+- Animated embeds: next-word probability bars, story game with scouts taking turns, words gliding to their homes, capitals arrows, bread lookup, train-booking agent, noise-to-cat diffusion (red sky), home-robot HUD.
+- Look: near-black with a vignette, Terminator red #E0201B / #FF2A1F, steel #7F95A8, off-white #E8E6E3; Oswald uppercase headings, Barlow text, Share Tech Mono HUD labels; square corners.
 - Speaker notes hold the game instructions for each part.
 - Personal talk: no Fractile branding.
 
